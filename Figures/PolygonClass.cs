@@ -36,21 +36,23 @@ namespace Art.Figures
                     polygonPoints[i].X += x;
                     polygonPoints[i].Y += y;
                 }
+                this.DeleteFigure(false);
+                this.Draw();
             }
-            this.DeleteFigure(false);
-            this.Draw();
         }
         public bool RangeCheck(int x, int y)
         {
             bool flag = true;
             for (int i = 0; i < polygonPoints.Length; i++)
             {
-                if (!(polygonPoints[i].X + x < 0 && polygonPoints[i].Y + y < 0)
+                if (!((polygonPoints[i].X + x < 0 && polygonPoints[i].Y + y < 0)
                 || (polygonPoints[i].Y + y < 0)
                 || (polygonPoints[i].X + x < 0)
+                || (polygonPoints[i].X + x > Init.pictureBox.Width)
+                || (polygonPoints[i].Y + y > Init.pictureBox.Height)
                 || (polygonPoints[i].X + x > Init.pictureBox.Width && polygonPoints[i].Y + y < 0)
                 || (polygonPoints[i].X + x > Init.pictureBox.Width && polygonPoints[i].Y + y > Init.pictureBox.Height)
-                || (polygonPoints[i].X + x < 0 && polygonPoints[i].Y + y > Init.pictureBox.Height))
+                || (polygonPoints[i].X + x < 0 && polygonPoints[i].Y + y > Init.pictureBox.Height)))
                 {
                     flag = true;
                 }

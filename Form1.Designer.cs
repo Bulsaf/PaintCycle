@@ -261,7 +261,7 @@ namespace Art
             OwnHTextBox.Name = "OwnHTextBox";
             OwnHTextBox.Size = new Size(145, 27);
             OwnHTextBox.TabIndex = 15;
-            OwnHTextBox.KeyPress += OwnHTextBox_KeyPress;
+            OwnHTextBox.KeyPress += OnlyDigit;
             // 
             // label14
             // 
@@ -296,7 +296,7 @@ namespace Art
             OwnYTextBox.Name = "OwnYTextBox";
             OwnYTextBox.Size = new Size(76, 27);
             OwnYTextBox.TabIndex = 6;
-            OwnYTextBox.KeyPress += OwnYTextBox_KeyPress;
+            OwnYTextBox.KeyPress += OnlyDigit;
             // 
             // OwnWTextBox
             // 
@@ -304,7 +304,7 @@ namespace Art
             OwnWTextBox.Name = "OwnWTextBox";
             OwnWTextBox.Size = new Size(145, 27);
             OwnWTextBox.TabIndex = 4;
-            OwnWTextBox.KeyPress += OwnWTextBox_KeyPress;
+            OwnWTextBox.KeyPress += OnlyDigit;
             // 
             // OwnXTextBox
             // 
@@ -312,7 +312,7 @@ namespace Art
             OwnXTextBox.Name = "OwnXTextBox";
             OwnXTextBox.Size = new Size(76, 27);
             OwnXTextBox.TabIndex = 3;
-            OwnXTextBox.KeyPress += OwnXTextBox_KeyPress;
+            OwnXTextBox.KeyPress += OnlyDigit;
             // 
             // OwnBoxButton
             // 
@@ -374,7 +374,7 @@ namespace Art
             PolygonYTextBox.ReadOnly = true;
             PolygonYTextBox.Size = new Size(76, 27);
             PolygonYTextBox.TabIndex = 6;
-            PolygonYTextBox.KeyPress += PolygonYTextBox_KeyPress;
+            PolygonYTextBox.KeyPress += OnlyDigit;
             // 
             // PolygonCountTextBox
             // 
@@ -382,7 +382,7 @@ namespace Art
             PolygonCountTextBox.Name = "PolygonCountTextBox";
             PolygonCountTextBox.Size = new Size(152, 27);
             PolygonCountTextBox.TabIndex = 4;
-            PolygonCountTextBox.KeyPress += PolygonCountTextBox_KeyPress;
+            PolygonCountTextBox.KeyPress += OnlyDigit;
             // 
             // PolygonXTextBox
             // 
@@ -391,7 +391,7 @@ namespace Art
             PolygonXTextBox.ReadOnly = true;
             PolygonXTextBox.Size = new Size(76, 27);
             PolygonXTextBox.TabIndex = 3;
-            PolygonXTextBox.KeyPress += PolygonXTextBox_KeyPress;
+            PolygonXTextBox.KeyPress += OnlyDigit;
             // 
             // PolygonBoxButton
             // 
@@ -486,7 +486,7 @@ namespace Art
             TriangleY3TextBox.Name = "TriangleY3TextBox";
             TriangleY3TextBox.Size = new Size(76, 27);
             TriangleY3TextBox.TabIndex = 8;
-            TriangleY3TextBox.KeyPress += TriangleY3TextBox_KeyPress;
+            TriangleY3TextBox.KeyPress += OnlyDigit;
             // 
             // TriangleX3TextBox
             // 
@@ -494,7 +494,7 @@ namespace Art
             TriangleX3TextBox.Name = "TriangleX3TextBox";
             TriangleX3TextBox.Size = new Size(76, 27);
             TriangleX3TextBox.TabIndex = 7;
-            TriangleX3TextBox.KeyPress += TriangleX3TextBox_KeyPress;
+            TriangleX3TextBox.KeyPress += OnlyDigit;
             // 
             // TriangleY2TextBox
             // 
@@ -502,7 +502,7 @@ namespace Art
             TriangleY2TextBox.Name = "TriangleY2TextBox";
             TriangleY2TextBox.Size = new Size(76, 27);
             TriangleY2TextBox.TabIndex = 6;
-            TriangleY2TextBox.KeyPress += TriangleY2TextBox_KeyPress_1;
+            TriangleY2TextBox.KeyPress += OnlyDigit;
             // 
             // TriangleX2TextBox
             // 
@@ -510,7 +510,7 @@ namespace Art
             TriangleX2TextBox.Name = "TriangleX2TextBox";
             TriangleX2TextBox.Size = new Size(76, 27);
             TriangleX2TextBox.TabIndex = 5;
-            TriangleX2TextBox.KeyPress += TriangleX2TextBox_KeyPress;
+            TriangleX2TextBox.KeyPress += OnlyDigit;
             // 
             // TriangleX1TextBox
             // 
@@ -518,7 +518,7 @@ namespace Art
             TriangleX1TextBox.Name = "TriangleX1TextBox";
             TriangleX1TextBox.Size = new Size(76, 27);
             TriangleX1TextBox.TabIndex = 4;
-            TriangleX1TextBox.KeyPress += TriangleX1TextBox_KeyPress;
+            TriangleX1TextBox.KeyPress += OnlyDigit;
             // 
             // TriangleY1TextBox
             // 
@@ -526,7 +526,7 @@ namespace Art
             TriangleY1TextBox.Name = "TriangleY1TextBox";
             TriangleY1TextBox.Size = new Size(76, 27);
             TriangleY1TextBox.TabIndex = 3;
-            TriangleY1TextBox.KeyPress += TriangleY1TextBox_KeyPress;
+            TriangleY1TextBox.KeyPress += OnlyDigit;
             // 
             // TriangleBoxButton
             // 
@@ -601,7 +601,7 @@ namespace Art
             EllipsXTextBox.Name = "EllipsXTextBox";
             EllipsXTextBox.Size = new Size(76, 27);
             EllipsXTextBox.TabIndex = 6;
-            EllipsXTextBox.KeyPress += EllipsXTextBox_KeyPress;
+            EllipsXTextBox.KeyPress += OnlyDigit;
             // 
             // CircleRadioButton
             // 
@@ -633,7 +633,7 @@ namespace Art
             EllipsYTextBox.Name = "EllipsYTextBox";
             EllipsYTextBox.Size = new Size(76, 27);
             EllipsYTextBox.TabIndex = 4;
-            EllipsYTextBox.KeyPress += EllipsYTextBox_KeyPress;
+            EllipsYTextBox.KeyPress += OnlyDigit;
             // 
             // EllipsHTextBox
             // 
@@ -641,7 +641,7 @@ namespace Art
             EllipsHTextBox.Name = "EllipsHTextBox";
             EllipsHTextBox.Size = new Size(125, 27);
             EllipsHTextBox.TabIndex = 2;
-            EllipsHTextBox.KeyPress += EllipsHTextBox_KeyPress;
+            EllipsHTextBox.KeyPress += OnlyDigit;
             // 
             // EllipsWTextBox
             // 
@@ -649,7 +649,7 @@ namespace Art
             EllipsWTextBox.Name = "EllipsWTextBox";
             EllipsWTextBox.Size = new Size(125, 27);
             EllipsWTextBox.TabIndex = 1;
-            EllipsWTextBox.KeyPress += EllipsWTextBox_KeyPress;
+            EllipsWTextBox.KeyPress += OnlyDigit;
             // 
             // EllipsBoxButton
             // 
@@ -706,7 +706,7 @@ namespace Art
             RectangleXTextBox.Name = "RectangleXTextBox";
             RectangleXTextBox.Size = new Size(76, 27);
             RectangleXTextBox.TabIndex = 8;
-            RectangleXTextBox.KeyPress += RectangleXTextBox_KeyPress;
+            RectangleXTextBox.KeyPress += OnlyDigit;
             // 
             // RectangleLLabel
             // 
@@ -756,7 +756,7 @@ namespace Art
             RectangleYTextBox.Name = "RectangleYTextBox";
             RectangleYTextBox.Size = new Size(76, 27);
             RectangleYTextBox.TabIndex = 4;
-            RectangleYTextBox.KeyPress += RectangleYTextBox_KeyPress;
+            RectangleYTextBox.KeyPress += OnlyDigit;
             // 
             // RectangleHTextBox
             // 
@@ -764,7 +764,7 @@ namespace Art
             RectangleHTextBox.Name = "RectangleHTextBox";
             RectangleHTextBox.Size = new Size(125, 27);
             RectangleHTextBox.TabIndex = 2;
-            RectangleHTextBox.KeyPress += RectangleHTextBox_KeyPress;
+            RectangleHTextBox.KeyPress += OnlyDigit;
             // 
             // RectangleWTextBox
             // 
@@ -772,7 +772,7 @@ namespace Art
             RectangleWTextBox.Name = "RectangleWTextBox";
             RectangleWTextBox.Size = new Size(125, 27);
             RectangleWTextBox.TabIndex = 1;
-            RectangleWTextBox.KeyPress += RectangleWTextBox_KeyPress;
+            RectangleWTextBox.KeyPress += OnlyDigit;
             // 
             // RectangleBoxButton
             // 

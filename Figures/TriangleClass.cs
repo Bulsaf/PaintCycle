@@ -50,21 +50,23 @@ namespace Art.Figures
                     trianglePoints[i].X += x;
                     trianglePoints[i].Y += y;
                 }
+                this.DeleteFigure(false);
+                this.Draw();
             }
-            this.DeleteFigure(false);
-            this.Draw();
         }
         public bool RangeCheck(int x, int y)
         {
             bool flag = true;
             for (int i = 0; i < trianglePoints.Length; i++)
             {
-                if (!(trianglePoints[i].X + x < 0 && trianglePoints[i].Y + y < 0)
+                if (!((trianglePoints[i].X + x < 0 && trianglePoints[i].Y + y < 0)
                 || (trianglePoints[i].Y + y < 0)
                 || (trianglePoints[i].X + x < 0)
+                || (trianglePoints[i].X + x > Init.pictureBox.Width)
+                || (trianglePoints[i].Y + y > Init.pictureBox.Height)
                 || (trianglePoints[i].X + x > Init.pictureBox.Width && trianglePoints[i].Y + y < 0)
                 || (trianglePoints[i].X + x > Init.pictureBox.Width && trianglePoints[i].Y + y > Init.pictureBox.Height)
-                || (trianglePoints[i].X + x < 0 && trianglePoints[i].Y + y > Init.pictureBox.Height)) {
+                || (trianglePoints[i].X + x < 0 && trianglePoints[i].Y + y > Init.pictureBox.Height))) {
                     flag = true;
                 }
                 else

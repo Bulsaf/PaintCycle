@@ -40,7 +40,8 @@ namespace Art.Figures
                 || (this.x + this.width + x > Init.pictureBox.Width)
                 || (this.x + x > Init.pictureBox.Width && this.y + y > Init.pictureBox.Height)
                 || (this.y + this.height + y > Init.pictureBox.Height)
-                || (this.x + x < 0 && this.y + y > Init.pictureBox.Height) || (this.x + x < 0)))
+                || (this.x + x < 0 && this.y + y > Init.pictureBox.Height)
+                || (this.x + x < 0)))
             {
                     this.x += x;
                     this.y += y;

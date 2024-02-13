@@ -45,6 +45,7 @@ namespace Art
                 ShapeContainer.AddFigure(rectangle);
                 rectangle.Draw();
                 FigureComboBox.Items.Add(rectangle);
+          
             }
             else if(SquareRadioButton.Checked)
             {
@@ -70,6 +71,10 @@ namespace Art
             {
                 MessageBox.Show("Выберите фигуру!");
             }
+            RectangleXTextBox.Clear();
+            RectangleYTextBox.Clear();
+            RectangleWTextBox.Clear();
+            RectangleHTextBox.Clear();
         }
         private void EllipsBoxButton_Click(object sender, EventArgs e)
         {
@@ -107,6 +112,10 @@ namespace Art
             {
                 MessageBox.Show("Выберите фигуру!");
             }
+            EllipsXTextBox.Clear();
+            EllipsYTextBox.Clear();
+            EllipsWTextBox.Clear();
+            EllipsHTextBox.Clear();
         }
         private void TriangleBoxButton_Click(object sender, EventArgs e)
         {
@@ -131,6 +140,12 @@ namespace Art
             ShapeContainer.AddFigure(triangle);
             triangle.Draw();
             FigureComboBox.Items.Add(triangle);
+            TriangleX1TextBox.Clear();
+            TriangleY1TextBox.Clear();
+            TriangleX2TextBox.Clear();
+            TriangleY2TextBox.Clear();
+            TriangleX3TextBox.Clear();
+            TriangleY3TextBox.Clear();
         }
         private int i = 0;
         private PolygonClass polygon = new PolygonClass();
@@ -179,9 +194,10 @@ namespace Art
             }
             else
             {
-                ShapeContainer.AddFigure(polygon);
+                PolygonClass newPolygon = new PolygonClass(polygon.count,polygon.polygonPoints);
+                ShapeContainer.AddFigure(newPolygon);
+                FigureComboBox.Items.Add(newPolygon);
                 polygon.Draw();
-                FigureComboBox.Items.Add(polygon);
                 PolygonBoxButton.Text = "ОК";
                 PolygonXLabel.Text = "X1:";
                 PolygonYLabel.Text = "Y1:";
@@ -256,107 +272,6 @@ namespace Art
             {
                 e.Handled = true;
             }
-        }
-
-        private void PolygonCountTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void PolygonXTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-        private void PolygonYTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void RectangleWTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void RectangleHTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void RectangleXTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void RectangleYTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void EllipsWTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void EllipsHTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void EllipsXTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void EllipsYTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void TriangleX1TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-        private void TriangleX2TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void TriangleX3TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void TriangleY1TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-        private void TriangleY2TextBox_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-        private void TriangleY3TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void OwnWTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void OwnHTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void OwnXTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
-        }
-
-        private void OwnYTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyDigit(sender, e);
         }
 
         private void RectangleRadioButton_Click(object sender, EventArgs e)
