@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
 using Art.Figures;
+using System.Reflection.Metadata.Ecma335;
 namespace Art
 {
     public partial class Form1 : Form
@@ -28,6 +29,7 @@ namespace Art
             if (RectangleRadioButton.Checked)
             {
                 if(RectangleXTextBox.Text == string.Empty || RectangleYTextBox.Text == string.Empty || RectangleHTextBox.Text == string.Empty || RectangleWTextBox.Text == string.Empty)
+                if (RectangleXTextBox.Text == string.Empty || RectangleYTextBox.Text == string.Empty || RectangleHTextBox.Text == string.Empty || RectangleWTextBox.Text == string.Empty)
                 {
                     MessageBox.Show("Введите данные!!!");
                     return;
@@ -47,7 +49,7 @@ namespace Art
                 FigureComboBox.Items.Add(rectangle);
           
             }
-            else if(SquareRadioButton.Checked)
+            else if (SquareRadioButton.Checked)
             {
                 if (RectangleXTextBox.Text == string.Empty || RectangleYTextBox.Text == string.Empty || RectangleWTextBox.Text == string.Empty)
                 {
@@ -80,7 +82,7 @@ namespace Art
         {
             if (EllipsRadioButton.Checked)
             {
-                if (EllipsXTextBox.Text == string.Empty || EllipsYTextBox.Text == string.Empty || EllipsWTextBox.Text == string.Empty|| EllipsHTextBox.Text == string.Empty)
+                if (EllipsXTextBox.Text == string.Empty || EllipsYTextBox.Text == string.Empty || EllipsWTextBox.Text == string.Empty || EllipsHTextBox.Text == string.Empty)
                 {
                     MessageBox.Show("Введите данные!!!");
                     return;
@@ -99,7 +101,7 @@ namespace Art
                 ellips.Draw();
                 FigureComboBox.Items.Add(ellips);
             }
-            else if(CircleRadioButton.Checked)
+            else if (CircleRadioButton.Checked)
             {
                 EllipsClass circle = new CircleClass(int.Parse(EllipsXTextBox.Text),
                                                 int.Parse(EllipsYTextBox.Text),
@@ -120,7 +122,7 @@ namespace Art
         private void TriangleBoxButton_Click(object sender, EventArgs e)
         {
             if (TriangleX1TextBox.Text == string.Empty || TriangleX2TextBox.Text == string.Empty || TriangleX3TextBox.Text == string.Empty
-                || TriangleY1TextBox.Text == string.Empty || TriangleY2TextBox.Text == string.Empty|| TriangleY3TextBox.Text == string.Empty)
+                || TriangleY1TextBox.Text == string.Empty || TriangleY2TextBox.Text == string.Empty || TriangleY3TextBox.Text == string.Empty)
             {
                 MessageBox.Show("Введите данные!!!");
                 return;
@@ -194,7 +196,7 @@ namespace Art
             }
             else
             {
-                PolygonClass newPolygon = new PolygonClass(polygon.count,polygon.polygonPoints);
+                PolygonClass newPolygon = new PolygonClass(polygon.count, polygon.polygonPoints);
                 ShapeContainer.AddFigure(newPolygon);
                 FigureComboBox.Items.Add(newPolygon);
                 polygon.Draw();
@@ -210,6 +212,27 @@ namespace Art
                 polygon.polygonPoints = null;
 
             }
+        }
+        private void OwnBoxButton_Click(object sender, EventArgs e)
+        {
+            if (OwnXTextBox.Text == string.Empty || OwnYTextBox.Text == string.Empty || OwnHTextBox.Text == string.Empty || OwnWTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Введите данные!!!");
+                return;
+        }
+            if (int.Parse(OwnXTextBox.Text) > Init.pictureBox.Width || int.Parse(OwnYTextBox.Text) > Init.pictureBox.Height
+                || int.Parse(OwnXTextBox.Text) + int.Parse(OwnWTextBox.Text) > Init.pictureBox.Width || int.Parse(OwnHTextBox.Text) + int.Parse(OwnYTextBox.Text) > Init.pictureBox.Height)
+            {
+                MessageBox.Show("Выход за границы!");
+                return;
+            }
+            OwnFigureClass ownFigure = new OwnFigureClass(int.Parse(OwnXTextBox.Text),
+                                                    int.Parse(OwnYTextBox.Text),
+                                                    int.Parse(OwnWTextBox.Text),
+                                                    int.Parse(OwnHTextBox.Text));
+            ShapeContainer.AddFigure(ownFigure);
+            ownFigure.Draw();
+            FigureComboBox.Items.Add(ownFigure);
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -241,6 +264,10 @@ namespace Art
             {
                 MessageBox.Show("Фигура не выбрана");
             }
+            else if (!minusOnFirstOrOne(MoveXTextBox) || !minusOnFirstOrOne(MoveYTextBox))
+            {
+                MessageBox.Show("Некорректный ввод значений для перемещения");
+            }
             else
             {
                 ShapeContainer.shapeContainer[FigureComboBox.SelectedIndex].MoveTo(int.Parse(MoveXTextBox.Text), int.Parse(MoveYTextBox.Text));
@@ -253,6 +280,17 @@ namespace Art
             {
                 e.Handled = true;
             }
+        }
+        private bool minusOnFirstOrOne(TextBox textBox)
+        {
+            for (int i = 0; i < textBox.Text.Length; i++)
+            {
+                if (textBox.Text[i] == '-' && i != 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         private void MoveXTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {

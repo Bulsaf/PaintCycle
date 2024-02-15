@@ -322,6 +322,7 @@ namespace Art
             OwnBoxButton.TabIndex = 0;
             OwnBoxButton.Text = "Создать";
             OwnBoxButton.UseVisualStyleBackColor = true;
+            OwnBoxButton.Click += OwnBoxButton_Click;
             // 
             // PolygonBox
             // 
@@ -795,10 +796,11 @@ namespace Art
             // 
             // pictureBox
             // 
-            pictureBox.BackColor = Color.WhiteSmoke;
+            pictureBox.BackColor = Color.White;
+            pictureBox.BorderStyle = BorderStyle.Fixed3D;
             pictureBox.Location = new Point(0, 0);
             pictureBox.Name = "pictureBox";
-            pictureBox.Size = new Size(794, 802);
+            pictureBox.Size = new Size(1321, 1000);
             pictureBox.TabIndex = 1;
             pictureBox.TabStop = false;
             // 
@@ -806,12 +808,14 @@ namespace Art
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1393, 802);
+            Controls.Add(panel1);
             Controls.Add(pictureBox);
             Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
+            WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             DeleteBox.ResumeLayout(false);
             MoveBox.ResumeLayout(false);
