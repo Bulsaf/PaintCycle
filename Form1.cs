@@ -28,12 +28,13 @@ namespace Art
         {
             if (RectangleRadioButton.Checked)
             {
+                if(RectangleXTextBox.Text == string.Empty || RectangleYTextBox.Text == string.Empty || RectangleHTextBox.Text == string.Empty || RectangleWTextBox.Text == string.Empty)
                 if (RectangleXTextBox.Text == string.Empty || RectangleYTextBox.Text == string.Empty || RectangleHTextBox.Text == string.Empty || RectangleWTextBox.Text == string.Empty)
                 {
                     MessageBox.Show("Введите данные!!!");
                     return;
                 }
-                if (int.Parse(RectangleXTextBox.Text) > Init.pictureBox.Width || int.Parse(RectangleYTextBox.Text) > Init.pictureBox.Height
+                if (int.Parse(RectangleXTextBox.Text) > Init.pictureBox.Width || int.Parse(RectangleYTextBox.Text) > Init.pictureBox.Height 
                     || int.Parse(RectangleXTextBox.Text) + int.Parse(RectangleWTextBox.Text) > Init.pictureBox.Width || int.Parse(RectangleHTextBox.Text) + int.Parse(RectangleYTextBox.Text) > Init.pictureBox.Height)
                 {
                     MessageBox.Show("Выход за границы!");
@@ -46,7 +47,7 @@ namespace Art
                 ShapeContainer.AddFigure(rectangle);
                 rectangle.Draw();
                 FigureComboBox.Items.Add(rectangle);
-
+          
             }
             else if (SquareRadioButton.Checked)
             {
@@ -218,7 +219,7 @@ namespace Art
             {
                 MessageBox.Show("Введите данные!!!");
                 return;
-            }
+        }
             if (int.Parse(OwnXTextBox.Text) > Init.pictureBox.Width || int.Parse(OwnYTextBox.Text) > Init.pictureBox.Height
                 || int.Parse(OwnXTextBox.Text) + int.Parse(OwnWTextBox.Text) > Init.pictureBox.Width || int.Parse(OwnHTextBox.Text) + int.Parse(OwnYTextBox.Text) > Init.pictureBox.Height)
             {

@@ -812,6 +812,7 @@ namespace Art
             ClientSize = new Size(1393, 802);
             Controls.Add(panel1);
             Controls.Add(pictureBox);
+            Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
